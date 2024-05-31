@@ -68,3 +68,50 @@
 //
 //    return 0;
 //}
+
+
+////最长回文子串
+//class Solution {
+//public:
+//    //从两侧向中间寻找
+//    string longestPalindrome(string s) {
+//        int sz = s.size();
+//        if (sz < 2) return s;
+//        int lengthMax = 1;//当前最长回文字串的起始长度
+//        int begin = 0;//当前最长回文字串的起始下标
+//
+//        for (int i = 0; i < sz - 1; i++)//回文不可能到数组末尾，因为如果这样的话
+//        {
+//            for (int j = i + 1; j < sz; j++)
+//            {//判断[i,j]范围内的子串是不是回文子串，如果是，且回文字串的长度大于之前记录的范围内的子串是不是回文子串，如果是，且回文字串的长度大于之前记录的lengthhMax，就更新lengthMax和回文子串的下标i，就更新lengthMax和回文子串的下标i
+//                if (j - i + 1 > lengthMax && judgeLPS(s, i, j))//LPS是最长回文子串Longest palindromic substring的缩写
+//                {
+//                    lengthMax = j - i + 1;
+//                    begin = i;
+//                }
+//            }
+//        }
+//
+//        return s.substr(begin, lengthMax);
+//    }
+//
+//private:
+//    bool judgeLPS(const string& s, int left, int right)//防止字符串过长导致的超出内存限制问题,传引用传参进行判断
+//    {
+//        while (left < right)
+//        {
+//            if (s[left] != s[right])
+//            {
+//                return false;
+//            }
+//            else
+//            {
+//                left++;
+//                right--;
+//            }
+//        }
+//        return true;//在[i,j]范围内都相同了就返回真
+//    }
+//};
+
+//Z字型变换
